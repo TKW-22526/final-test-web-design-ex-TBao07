@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Du Lịch Việt Nam — Khám phá vẻ đẹp ba miền</title>
+  <meta name="description" content="Cổng thông tin du lịch Việt Nam: vịnh Hạ Long, Sa Pa, Hội An, Bà Nà Hills, Phú Quốc và nhiều điểm đến nổi tiếng khác." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">VN</span>
+        <span>Du Lịch <strong>Việt Nam</strong></span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="active">Trang chủ</a>
+        <a href="html/gioithieu.html">Giới thiệu</a>
+        <a href="html/diadiem.html">Địa điểm</a>
+        <a href="html/gallery.html">Thư viện ảnh</a>
+        <a href="html/lienhe.html">Liên hệ</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Chuyển đổi giao diện">🌙</button>
+        <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / SLIDESHOW -->
+  <section class="hero">
+    <div class="slideshow" id="slideshow">
+      <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&q=80')"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1528181304800-259b08848526?w=1600&q=80')"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=1600&q=80')"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="badge">✦ Hành trình ba miền Tổ quốc</span>
+      <h1>Khám phá <span class="accent">vẻ đẹp</span><br />Việt Nam</h1>
+      <p>Từ vịnh Hạ Long hùng vĩ, ruộng bậc thang Sa Pa đến phố cổ Hội An rực rỡ đèn lồng – mỗi điểm đến là một câu chuyện đang chờ bạn viết tiếp.</p>
+      <div class="hero-actions">
+        <a href="html/diadiem.html" class="btn btn-primary">Khám phá địa điểm →</a>
+        <a href="html/gioithieu.html" class="btn btn-ghost">Tìm hiểu thêm</a>
+      </div>
+    </div>
+    <div class="slide-dots" id="slideDots"></div>
+  </section>
+
+  <!-- 3 MIỀN -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Ba miền</p>
+        <h2>Mỗi vùng một sắc thái riêng</h2>
+        <p class="lead">Bắc – Trung – Nam, mỗi miền đất Việt mang trong mình một câu chuyện văn hóa, cảnh sắc và ẩm thực rất riêng.</p>
+      </div>
+      <div class="region-grid">
+        <a href="html/diadiem.html?mien=bac" class="region-card">
+          <span class="region-num">01</span>
+          <h3>Miền Bắc</h3>
+          <p>Núi non hùng vĩ, văn hóa nghìn năm</p>
+          <span class="link-more">Khám phá →</span>
+        </a>
+        <a href="html/diadiem.html?mien=trung" class="region-card">
+          <span class="region-num">02</span>
+          <h3>Miền Trung</h3>
+          <p>Di sản cổ kính, biển xanh nắng vàng</p>
+          <span class="link-more">Khám phá →</span>
+        </a>
+        <a href="html/diadiem.html?mien=nam" class="region-card">
+          <span class="region-num">03</span>
+          <h3>Miền Nam</h3>
+          <p>Năng động, sông nước miệt vườn</p>
+          <span class="link-more">Khám phá →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ĐỊA ĐIỂM NỔI BẬT -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head row">
+        <div>
+          <p class="eyebrow">Nổi bật</p>
+          <h2>Địa điểm không thể bỏ lỡ</h2>
+        </div>
+        <a href="html/diadiem.html" class="link-more strong">Xem tất cả →</a>
+      </div>
+      <div class="card-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <h2>Sẵn sàng cho hành trình mới?</h2>
+        <p>Liên hệ với chúng tôi để được tư vấn lịch trình phù hợp nhất cho chuyến đi sắp tới của bạn.</p>
+        <a href="html/lienhe.html" class="btn btn-accent">Liên hệ ngay →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo"><span class="logo-icon">VN</span><span>Du Lịch <strong>Việt Nam</strong></span></div>
+        <p class="muted">Cổng thông tin du lịch giúp bạn khám phá vẻ đẹp ba miền – từ vịnh Hạ Long hùng vĩ đến phố cổ Hội An rực rỡ và đảo ngọc Phú Quốc.</p>
+      </div>
+      <div>
+        <h4>Khám phá</h4>
+        <ul><li><a href="html/gioithieu.html">Giới thiệu</a></li><li><a href="diadiem.html">Địa điểm</a></li><li><a href="gallery.html">Thư viện ảnh</a></li><li><a href="lienhe.html">Liên hệ</a></li></ul>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <ul><li>✉ bngo7385@gmail.com</li><li>☎ 0865322476</li><li>📍 Trà Vinh, Việt Nam</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Du Lịch Việt Nam.</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

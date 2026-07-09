@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Địa điểm du lịch — Du Lịch Việt Nam</title>
+  <meta name="description" content="Danh sách các địa điểm du lịch nổi tiếng tại Việt Nam theo ba miền Bắc – Trung – Nam." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="logo"><span class="logo-icon">VN</span><span>Du Lịch <strong>Việt Nam</strong></span></a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="diadiem.html" class="active">Địa điểm</a>
+        <a href="gallery.html">Thư viện ảnh</a>
+        <a href="lienhe.html">Liên hệ</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Đổi giao diện">🌙</button>
+        <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero small">
+    <div class="container">
+      <p class="eyebrow">Khám phá</p>
+      <h1>Địa điểm du lịch nổi bật</h1>
+      <p class="lead">Lựa chọn điểm đến cho hành trình của bạn theo từng vùng miền của Tổ quốc.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="controls">
+        <div class="filter-tabs" id="filterTabs">
+          <button data-region="all" class="active">Tất cả</button>
+          <button data-region="bac">Miền Bắc</button>
+          <button data-region="trung">Miền Trung</button>
+          <button data-region="nam">Miền Nam</button>
+        </div>
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="🔍 Tìm địa điểm, tỉnh thành..." maxlength="80" />
+        </div>
+      </div>
+      <div class="card-grid" id="placeGrid"></div>
+      <div class="empty" id="emptyState" hidden>Không tìm thấy địa điểm phù hợp.</div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><div class="logo"><span class="logo-icon">VN</span><span>Du Lịch <strong>Việt Nam</strong></span></div><p class="muted">Cổng thông tin du lịch ba miền.</p></div>
+      <div><h4>Khám phá</h4><ul><li><a href="gioithieu.html">Giới thiệu</a></li><li><a href="diadiem.html">Địa điểm</a></li><li><a href="gallery.html">Thư viện ảnh</a></li><li><a href="lienhe.html">Liên hệ</a></li></ul></div>
+      <div><h4>Liên hệ</h4><ul><li>✉ bngo7385@gmail.com</li><li>☎ 0865322476</li><li>📍 Trà Vinh, Việt Nam</li></ul></div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Du Lịch Việt Nam.</div>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>
