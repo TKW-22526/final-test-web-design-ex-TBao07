@@ -1,84 +1,56 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liên hệ — Du Lịch Việt Nam</title>
-  <meta name="description" content="Gửi góp ý hoặc liên hệ với đội ngũ Du Lịch Việt Nam." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" />
-  <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ & Góp Ý</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="../index.html" class="logo"><span class="logo-icon">VN</span><span>Du Lịch <strong>Việt Nam</strong></span></a>
-      <nav class="nav-menu" id="navMenu">
-        <a href="../index.html">Trang chủ</a>
-        <a href="gioithieu.html">Giới thiệu</a>
-        <a href="diadiem.html">Địa điểm</a>
-        <a href="gallery.html">Thư viện ảnh</a>
-        <a href="lienhe.html" class="active">Liên hệ</a>
-      </nav>
-      <div class="nav-actions">
-        <button id="themeToggle" class="icon-btn" aria-label="Đổi giao diện">🌙</button>
-        <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu">☰</button>
-      </div>
+    <header>
+    <div class="navbar">
+        <a href="../index.html" class="logo">🇻🇳 Du Lịch Việt Nam</a>
+        <div class="nav-container">
+           <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" >Trang chủ</a></li>
+                <li><a href="gioithieu.html" >Giới thiệu</a></li>
+                <li><a href="diadiem.html" class="active">Địa điểm</a></li>
+                <li><a href="gallery.html" >Thư viện ảnh</a></li>
+                <li><a href="lienhe.html" >Liên hệ</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider"></div>
+                </label>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
     </div>
-  </header>
+</header>
 
-  <section class="page-hero small">
     <div class="container">
-      <p class="eyebrow">Liên hệ</p>
-      <h1>Gửi góp ý của bạn</h1>
-      <p class="lead">Chúng tôi luôn lắng nghe ý kiến đóng góp để hoàn thiện trang web tốt hơn mỗi ngày.</p>
+        <h1>Liên Hệ & Góp Ý Ý Kiến</h1>
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+                <label for="fullname">Họ tên của bạn:</label>
+                <input type="text" id="fullname" placeholder="Nhập họ và tên..." required>
+            </div>
+            <div class="form-group">
+                <label for="email">Địa chỉ Email:</label>
+                <input type="email" id="email" placeholder="Nhập địa chỉ email liên hệ..." required>
+            </div>
+            <div class="form-group">
+                <label for="content">Nội dung góp ý:</label>
+                <textarea id="content" rows="6" placeholder="Viết nội dung chia sẻ hoặc góp ý tại đây..." required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; padding: 12px; font-size:16px;">Gửi thông tin góp ý</button>
+        </form>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="container contact-grid">
-      <aside class="contact-info">
-        <div class="info-card"><span class="info-icon">✉</span><div><p class="info-label">Email</p><p>bngo7385@gmail.com</p></div></div>
-        <div class="info-card"><span class="info-icon">☎</span><div><p class="info-label">Hotline</p><p>0865322476</p></div></div>
-        <div class="info-card"><span class="info-icon">📍</span><div><p class="info-label">Địa chỉ</p><p>Trà Vinh</p></div></div>
-        <div class="map-box">
-          <iframe title="Bản đồ Việt Nam"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d59867071.16!2d105.0!3d16.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1700000000000"
-            width="100%" height="260" loading="lazy" style="border:0" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </aside>
-
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="field">
-          <label for="name">Họ và tên</label>
-          <input type="text" id="name" name="name" maxlength="100" placeholder="Nguyễn Văn A" />
-          <p class="err" data-err="name"></p>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" maxlength="255" placeholder="ban@example.com" />
-          <p class="err" data-err="email"></p>
-        </div>
-        <div class="field">
-          <label for="message">Nội dung góp ý</label>
-          <textarea id="message" name="message" rows="6" maxlength="1000" placeholder="Chia sẻ ý kiến của bạn với chúng tôi..."></textarea>
-          <p class="err" data-err="message"></p>
-        </div>
-        <button type="submit" class="btn btn-primary">✈ Gửi góp ý</button>
-        <div class="alert success" id="successMsg" hidden>✓ Cảm ơn bạn đã gửi góp ý! Chúng tôi sẽ phản hồi sớm nhất.</div>
-      </form>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><div class="logo"><span class="logo-icon">VN</span><span>Du Lịch <strong>Việt Nam</strong></span></div><p class="muted">Cổng thông tin du lịch ba miền.</p></div>
-      <div><h4>Khám phá</h4><ul><li><a href="gioithieu.html">Giới thiệu</a></li><li><a href="diadiem.html">Địa điểm</a></li><li><a href="gallery.html">Thư viện ảnh</a></li><li><a href="lienhe.html">Liên hệ</a></li></ul></div>
-      <div><h4>Liên hệ</h4><ul><li>✉ bngo7385@gmail.com</li><li>☎ 0865322476</li><li>📍 Trà Vinh, Việt Nam</li></ul></div>
-    </div>
-    <div class="footer-bottom">© <span id="year"></span> Du Lịch Việt Nam.</div>
-  </footer>
-  <script src="../js/script.js"></script>
+    <footer><p>© 2026 Website Giới Thiệu Du Lịch Việt Nam</p></footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,67 +1,142 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Địa điểm du lịch — Du Lịch Việt Nam</title>
-  <meta name="description" content="Danh sách các địa điểm du lịch nổi tiếng tại Việt Nam theo ba miền Bắc – Trung – Nam." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" />
-  <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Địa Điểm Du Lịch - Danh Sách</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="../index.html" class="logo"><span class="logo-icon">VN</span><span>Du Lịch <strong>Việt Nam</strong></span></a>
-      <nav class="nav-menu" id="navMenu">
-        <a href="../index.html">Trang chủ</a>
-        <a href="gioithieu.html">Giới thiệu</a>
-        <a href="diadiem.html" class="active">Địa điểm</a>
-        <a href="gallery.html">Thư viện ảnh</a>
-        <a href="lienhe.html">Liên hệ</a>
-      </nav>
-      <div class="nav-actions">
-        <button id="themeToggle" class="icon-btn" aria-label="Đổi giao diện">🌙</button>
-        <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu">☰</button>
-      </div>
-    </div>
-  </header>
-
-  <section class="page-hero small">
-    <div class="container">
-      <p class="eyebrow">Khám phá</p>
-      <h1>Địa điểm du lịch nổi bật</h1>
-      <p class="lead">Lựa chọn điểm đến cho hành trình của bạn theo từng vùng miền của Tổ quốc.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="controls">
-        <div class="filter-tabs" id="filterTabs">
-          <button data-region="all" class="active">Tất cả</button>
-          <button data-region="bac">Miền Bắc</button>
-          <button data-region="trung">Miền Trung</button>
-          <button data-region="nam">Miền Nam</button>
+    <header>
+    <div class="navbar">
+        <a href="../index.html" class="logo">🇻🇳 DuLịchViệtNam</a>
+        <div class="nav-container">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" >Trang chủ</a></li>
+                <li><a href="gioithieu.html" >Giới thiệu</a></li>
+                <li><a href="diadiem.html" class="active">Địa điểm</a></li>
+                <li><a href="gallery.html" >Thư viện ảnh</a></li>
+                <li><a href="lienhe.html" >Liên hệ</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider"></div>
+                </label>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
         </div>
+    </div>
+</header>
+
+    <div class="container">
+        <h1>Danh Sách Các Địa Điểm Du Lịch</h1>
+        
+        <!-- Thanh Tìm Kiếm Thời Gian Thực -->
         <div class="search-box">
-          <input type="search" id="searchInput" placeholder="🔍 Tìm địa điểm, tỉnh thành..." maxlength="80" />
+            <input type="text" id="searchInput" onkeyup="searchLocation()" placeholder="Tìm kiếm...">
         </div>
-      </div>
-      <div class="card-grid" id="placeGrid"></div>
-      <div class="empty" id="emptyState" hidden>Không tìm thấy địa điểm phù hợp.</div>
-    </div>
-  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><div class="logo"><span class="logo-icon">VN</span><span>Du Lịch <strong>Việt Nam</strong></span></div><p class="muted">Cổng thông tin du lịch ba miền.</p></div>
-      <div><h4>Khám phá</h4><ul><li><a href="gioithieu.html">Giới thiệu</a></li><li><a href="diadiem.html">Địa điểm</a></li><li><a href="gallery.html">Thư viện ảnh</a></li><li><a href="lienhe.html">Liên hệ</a></li></ul></div>
-      <div><h4>Liên hệ</h4><ul><li>✉ bngo7385@gmail.com</li><li>☎ 0865322476</li><li>📍 Trà Vinh, Việt Nam</li></ul></div>
+        <!-- MIỀN BẮC -->
+        <h2 style="border-left: 5px solid var(--accent-color); padding-left: 10px; margin-top: 40px;">Khu Vực Miền Bắc</h2>
+        <div class="grid">
+            <div class="location-card">
+                <img src="../images/vinhhalong.jpg" alt="Vịnh Hạ Long">
+                <div class="location-info">
+                    <h3 class="location-title">Vịnh Hạ Long</h3>
+                    <p>Kỳ quan thiên nhiên thế giới với hàng ngàn hòn đảo đá vôi nhô lên từ mặt biển xanh.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.894220311235!2d107.0456103!3d20.9567993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a5d8f6385aefd%3A0x6b77241f9d501cb6!2sV%E1%BB%8Bnh%20H%E1%BB%A1%20Long!5e0!3m2!1svi!2s!4v1700000000000')">Xem bản đồ</button>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="../images/dinh.jpg" alt="Sa Pa">
+                <div class="location-info">
+                    <h3 class="location-title">Sa Pa</h3>
+                    <p>Thị xã trong sương lãng mạn nơi có đỉnh Fansipan nóc nhà Đông Dương huyền thoại.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59265.41249969186!2d103.81121049999999!3d22.33328575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cd4112674e5033%3A0x286395be8fb4c360!2sSa%20Pa%2C%20L%C3%A0o%20Cai%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000001')">Xem bản đồ</button>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="../images/trangan.webp" alt="Tràng An">
+                <div class="location-info">
+                    <h3 class="location-title">Tràng An</h3>
+                    <p>Quần thể di sản thế giới kép tinh khôi với hệ thống hang động rực rỡ xuyên núi sông.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.011603525206!2d105.89510110000001!3d20.2583853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313679268f77eb2f%3A0xae793e5dfd974415!2sQu%E1%BA%A7n%20th%E1%BB%83%20Danh%20th%E1%BA%AFng%20Tr%C3%A0ng%20An!5e0!3m2!1svi!2s!4v1700000000002')">Xem bản đồ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MIỀN TRUNG -->
+        <h2 style="border-left: 5px solid var(--accent-color); padding-left: 10px; margin-top: 40px;">Khu Vực Miền Trung</h2>
+        <div class="grid">
+            <div class="location-card">
+                <img src="../images/hoiantown.jpg" alt="Phố cổ Hội An">
+                <div class="location-info">
+                    <h3 class="location-title">Phố cổ Hội An</h3>
+                    <p>Đô thị cổ kính bình lặng bên dòng sông Hoài thơ mộng vàng rực ánh đèn hoa đăng.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.7473846617466!2d108.3243169!3d15.8778393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31420dd4e1353a7b%3A0xae3661e393de06f2!2sPh%E1%BB%91%20c%E1%BB%95%20H%E1%BB%99i%20An!5e0!3m2!1svi!2s!4v1700000000003')">Xem bản đồ</button>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="../images/banahills.jpg" alt="Bà Nà Hills">
+                <div class="location-info">
+                    <h3 class="location-title">Bà Nà Hills</h3>
+                    <p>Chốn bồng lai tiên cảnh mang kiến trúc Pháp lộng lẫy cùng Cầu Vàng bàn tay khổng lồ vươn mây.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.4578144670004!2d107.9946452!3d15.9973211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3141f621b5df9a49%3A0x63fe5076cf237a6b!2sB%C3%A0%20N%C3%A0%20Hills!5e0!3m2!1svi!2s!4v1700000000004')">Xem bản đồ</button>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="../images/dainoihue.webp" alt="Đại Nội Huế">
+                <div class="location-info">
+                    <h3 class="location-title">Đại Nội Huế</h3>
+                    <p>Quần thể di tích Cung điện triều Nguyễn hoàng tráng, tôn nghiêm mang hồn xưa dân tộc.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.2307527631313!2d107.5752943!3d16.4714125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3141a13fa3d623b3%3A0x5d96a798579cf66d!2s%C4%90%E1%BA%A1i%20N%E1%BB%99i%20Hu%E1%BA%BF!5e0!3m2!1svi!2s!4v1700000000005')">Xem bản đồ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MIỀN NAM -->
+        <h2 style="border-left: 5px solid var(--accent-color); padding-left: 10px; margin-top: 40px;">Khu Vực Miền Nam</h2>
+        <div class="grid">
+            <div class="location-card">
+                <img src="../images/chobenthanh.jpg" alt="Chợ Bến Thành">
+                <div class="location-info">
+                    <h3 class="location-title">Chợ Bến Thành</h3>
+                    <p>Biểu tượng văn hóa giao thương lâu đời giàu bản sắc bậc nhất TP. Hồ Chí Minh sôi động.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.485458316104!2d106.6961448!3d10.7725656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3f11d137df%3A0x6b77241f9d501cb6!2sCh%E1%BB%A3%20B%E1%BA%BFn%20Th%C3%A0nh!5e0!3m2!1svi!2s!4v1700000000006')">Xem bản đồ</button>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="../images/phuquoc.jpeg" alt="Đảo Phú Quốc">
+                <div class="location-info">
+                    <h3 class="location-title">Đảo Phú Quốc</h3>
+                    <p>Hòn đảo Ngọc thiên đường với các bãi tắm xanh trong vắt cùng hải sản tươi ngon mê hồn.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251025.2635928828!2d103.85698535!3d10.2220379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a78c62b2397713%3A0xda47d0e11a1d1f05!2zUGjDuiBRdeG7kWMsIEtpw6puIEdpYW5nLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1700000000007')">Xem bản đồ</button>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="../images/muine.jpg" alt="Mũi Né">
+                <div class="location-info">
+                    <h3 class="location-title">Mũi Né</h3>
+                    <p>Thiên đường của những cồn cát cát vàng cát trắng mịn màng uốn lượn lộng gió và biển xanh.</p>
+                    <button class="btn" onclick="openMapModal('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.284705350325!2d108.2831818!3d10.9419139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317690b2ebdf5cd3%3A0x6b77241f9d501cb6!2sMbinary%20N%C3%A9%2C%20Phan%20Thi%E1%BA%BFt%2C%20B%C3%ACnh%20Thu%E1%BA%ADn!5e0!3m2!1svi!2s!4v1700000000008')">Xem bản đồ</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="footer-bottom">© <span id="year"></span> Du Lịch Việt Nam.</div>
-  </footer>
-  <script src="../js/script.js"></script>
+
+    <!-- CẤU TRÚC MODAL XEM GOOGLE MAPS -->
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeMapModal()">&times;</span>
+            <h3 style="margin-bottom: 15px;">Bản đồ địa điểm Google Maps</h3>
+            <iframe id="mapIframe" src="" width="100%" height="400" style="border:0; border-radius:5px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <footer><p>© 2026 Website Giới Thiệu Du Lịch Việt Nam</p></footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>
